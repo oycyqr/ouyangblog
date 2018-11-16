@@ -11,16 +11,19 @@ import javax.persistence.Table;
  * @author oyc
  * @Title: OuYangUser
  * @ProjectName ouyangblog
- * @Description: TODO
+ * @Description: 系统用户实体类
  * @date 2018/11/15 21:21
  */
 @Entity
 @Data
-@Table(name="user")
+@Table(name = "user")
 public class OuYangUser {
     @Id
     private Integer id;
+
     private String name;
+
     private String account;
+
     private String password;
 }
