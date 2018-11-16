@@ -11,7 +11,7 @@ import javax.persistence.Table;
  * @author oyc
  * @Title: OuYangUser
  * @ProjectName ouyangblog
- * @Description: TODO
+ * @Description: 系统用户实体类
  * @date 2018/11/15 21:21
  */
 @Entity
