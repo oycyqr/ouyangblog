@@ -16,11 +16,14 @@ import javax.persistence.Table;
  */
 @Entity
 @Data
-@Table(name="user")
+@Table(name = "user")
 public class OuYangUser {
     @Id
     private Integer id;
+
     private String name;
+
     private String account;
+
     private String password;
 }

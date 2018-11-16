@@ -10,11 +10,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
 
-
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.setUseRegisteredSuffixPatternMatch(true);
     }
+
     @Bean
     public ServletRegistrationBean servletRegistrationBean(DispatcherServlet dispatcherServlet) {
         ServletRegistrationBean<DispatcherServlet> servletServletRegistrationBean = new ServletRegistrationBean<>(dispatcherServlet);

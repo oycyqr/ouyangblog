@@ -28,9 +28,9 @@ public class OuYangUserController {
     private OuYangUserRepository ouYangUserRepository;
 
     @RequestMapping("/list")
-    public String list(HttpServletRequest request, HttpServletResponse response, Model model){
+    public String list(HttpServletRequest request, HttpServletResponse response, Model model) {
         List<OuYangUser> userList = ouYangUserRepository.findAll();
-        model.addAttribute("userList",userList);
+        model.addAttribute("userList", userList);
         return "userList";
     }
 
