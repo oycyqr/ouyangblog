@@ -1,14 +1,8 @@
 package cn.com.ouyangblog;
 
 import cn.com.ouyangblog.filter.LoginInterceptor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.config.annotation.*;
-
-import javax.annotation.Resource;
 
 /**
  * 拦截器配置
@@ -33,6 +27,7 @@ public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
 
     /**
      * 跨域CORS配置
+     *
      * @param registry
      */
     @Override
@@ -40,7 +35,7 @@ public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
         super.addCorsMappings(registry);
         registry.addMapping("/cors/**")
                 .allowedHeaders("*")
-                .allowedMethods("POST","GET")
+                .allowedMethods("POST", "GET")
                 .allowedOrigins("*");
     }
 

@@ -39,7 +39,7 @@ public class SwaggerConfiguration {
                 .description("OuYangBlog使用Swagger构建RESTful APIs")
                 .termsOfServiceUrl("http://www.ouyangblog.com")
                 .contact(new Contact("ouyangcheng","http://www.baidu.com","1456682842@qq.com"))
-                .version("1.0")
+                .version("1.0.0")
                 .build();
     }
 }
