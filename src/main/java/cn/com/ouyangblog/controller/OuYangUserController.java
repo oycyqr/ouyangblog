@@ -34,7 +34,7 @@ public class OuYangUserController {
     public String list(HttpServletRequest request, HttpServletResponse response, Model model) {
         List<OuYangUser> userList = ouYangUserRepository.findAll();
         model.addAttribute("userList", userList);
-        return "userList";
+        return "pages/userList";
     }
 
 }

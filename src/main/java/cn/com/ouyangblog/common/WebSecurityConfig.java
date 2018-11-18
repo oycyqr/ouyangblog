@@ -37,7 +37,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/about", "/**/*.js", "/**/*.css","/img/**", "/*/*.*.png").permitAll()//定义不需要验证的请求
+                .antMatchers("/", "/home", "/about", "/vueTest","/common/**", "/**/*.js", "/**/*.css","/img/**", "/*/*.*.png").permitAll()//定义不需要验证的请求
                 .anyRequest().authenticated()//其余的需要验证
                 .and()
                 .formLogin()//定义login不需要验证

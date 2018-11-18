@@ -5,17 +5,14 @@
 </head>
 <body>
 <div th:fragment="footer">
-    <div class="container">
-        <footer>
-            <!-- this is footer -->
-            © 2017 ThinkingInGIS
-            <span sec:authorize="isAuthenticated()">
+    <footer>
+        © 2017 OuYangBlog
+        <span sec:authorize="isAuthenticated()">
                 | Logged user: <span sec:authentication="name"></span> |
                 Roles: <span sec:authentication="principal.authorities"></span> |
                 <a th:href="@{/logout}">登出</a>
             </span>
-        </footer>
-    </div>
+    </footer>
 </div>
 </body>
 </html>

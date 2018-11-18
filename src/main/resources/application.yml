@@ -15,6 +15,18 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initialSize: 1
+      minIdle: 1
+      maxActive: 50
+      maxWait: 6000
+      timeBetweenEvictionRunsMillis: 6000
+      minEvictableIdleTimeMillis: 30000
+      testWhileIdle: true
+      testOnBorrow: true
+      testOnReturn: true
+      validationQuery: SELECT 1 from dual
+      connectionProperties: config.decrypt=false # database connection plain password
   thymeleaf:
     prefix:
       classpath: /templates/
@@ -27,4 +39,4 @@ spring:
 
   security:
     basic:
-      enabled: true  # security 使能
+      enabled: false  # security 使能

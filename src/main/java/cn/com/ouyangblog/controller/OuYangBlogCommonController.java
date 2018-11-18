@@ -18,8 +18,14 @@ public class OuYangBlogCommonController {
     public String index() {
         return "/home";
     }
-    @GetMapping("/{page}")
+
+    @GetMapping("login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/pages/{page}")
     public String page(@PathVariable String page) {
-        return "/"+page;
+        return "/pages/" + page;
     }
 }

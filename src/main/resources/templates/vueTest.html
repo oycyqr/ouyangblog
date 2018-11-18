@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>vue Test</title>
+</head>
+<body>
+<!--这是我们的View-->
+<div id="app">
+    <p>{{ message }}</p>
+    <input type="text" v-model="message"/>
+</div>
+<div id="app1">
+    <h1>Hello, Vue.js!</h1>
+    <h1 v-if="yes">Yes!</h1>
+    <h1 v-if="no">No!</h1>
+    <h1 v-if="age >= 25">Age: {{ age }}</h1>
+    <h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
+</div>
+</body>
+<script src="js/vue.min.js"></script>
+<script>
+
+    // 这是我们的Model
+    var exampleData = {
+        message: 'Hello World!'
+    };
+    // 创建一个 Vue 实例或 "ViewModel"
+    // 它连接 View 与 Model
+    new Vue({
+        el: '#app',
+        data: exampleData
+    });
+
+    var vm = new Vue({
+        el: '#app1',
+        data: {
+            yes: true,
+            no: false,
+            age: 28,
+            name: 'keepfool'
+        }
+    });
+</script>
+</html>

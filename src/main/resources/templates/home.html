@@ -11,8 +11,11 @@
     <div class="starter-template">
         <h1>OuYangBlog 主页</h1>
         <embed>Spring Boot + Thymeleaf + Spring Security OuYangBlog</embed>
-        <h2>1. 打开 <a th:href="@{/user}">用户页面 (受 Spring Security 保护, 需要用户权限)</a></h2>
-        <h2>2. 打开 <a th:href="@{/about}">关于我</a></h2>
+        <h2>1.<a th:href="@{/user}">用户页面 (受 Spring Security 保护, 需要用户权限)</a></h2>
+        <h2>2.<a th:href="@{/pages/user}">用户页面 (受 Spring Security 保护, 需要用户权限)</a></h2>
+        <h2>3.<a th:href="@{/vueTest.html}">Vue</a></h2>
+        <h2>4.<a th:href="@{/about}">关于我</a></h2>
     </div>
 </div>
 </body>
+</html>

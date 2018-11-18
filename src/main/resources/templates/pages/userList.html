@@ -21,5 +21,15 @@
     </tr>
     </tbody>
 </table>
+<div class="container">
+    <footer>
+        © 2018 OuYangBlog
+        <span sec:authorize="isAuthenticated()">
+                | Logged user: <span sec:authentication="name"></span> |
+                Roles: <span sec:authentication="principal.authorities"></span> |
+                <a th:href="@{/logout}">登出</a>
+            </span>
+    </footer>
+</div>
 </body>
 </html>
