@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap-3.3.7/css/bootstrap.css}"/>
+    <script type="text/javascript" th:src="@{/js/jquery-3.3.1/jquery-3.3.1.min.js}"></script>
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h1>OuYangBlog 主页</h1>
+        <embed>Spring Boot + Thymeleaf + Spring Security OuYangBlog</embed>
+        <h2>1. 打开 <a th:href="@{/user}">用户页面 (受 Spring Security 保护, 需要用户权限)</a></h2>
+        <h2>2. 打开 <a th:href="@{/about}">关于我</a></h2>
+    </div>
+</div>
+</body>

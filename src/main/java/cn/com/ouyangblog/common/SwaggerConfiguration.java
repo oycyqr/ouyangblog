@@ -1,5 +1,7 @@
-package cn.com.ouyangblog;
+package cn.com.ouyangblog.common;
 
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import springfox.documentation.service.Contact;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -20,7 +22,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  */
 @Configuration
 @EnableSwagger2
-public class SwaggerConfiguration {
+public class SwaggerConfiguration extends WebMvcConfigurerAdapter {
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars*").addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
 
     @Bean
     public Docket createRestApi() {
@@ -37,8 +45,8 @@ public class SwaggerConfiguration {
                 //自定义信息可按需求填写
                 .title("OuYangBlog Swagger APIs")
                 .description("OuYangBlog使用Swagger构建RESTful APIs")
-                .termsOfServiceUrl("http://www.ouyangblog.com")
-                .contact(new Contact("ouyangcheng","http://www.baidu.com","1456682842@qq.com"))
+                .termsOfServiceUrl("https://www.cnblogs.com/oycyqr")
+                .contact(new Contact("ouyangcheng","https://www.cnblogs.com/oycyqr","1456682842@qq.com"))
                 .version("1.0.0")
                 .build();
     }

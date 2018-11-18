@@ -24,3 +24,7 @@ spring:
       mode: HTML5
       servlet:
         content-type: text/html
+
+  security:
+    basic:
+      enabled: true  # security 使能

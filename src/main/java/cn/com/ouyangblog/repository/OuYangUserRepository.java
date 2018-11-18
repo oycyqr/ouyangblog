@@ -13,4 +13,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface OuYangUserRepository extends JpaRepository<OuYangUser, Integer> {
+    OuYangUser findByAccount(String account);
 }
