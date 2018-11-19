@@ -38,14 +38,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/", "/home", "/about", "/vueTest","/common/**", "/**/*.js", "/**/*.css","/img/**", "/*/*.*.png").permitAll()//定义不需要验证的请求
+                //.antMatchers("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**").permitAll()//定义不需要验证的请求
                 .anyRequest().authenticated()//其余的需要验证
                 .and()
                 .formLogin()//定义login不需要验证
                 .loginPage("/login")
                 .permitAll()
+                //.loginProcessingUrl("/home")
                 .and()
                 .logout()//定义logout不需要验证
-                .permitAll().logoutSuccessUrl("/login")
+                .permitAll().logoutSuccessUrl("/")
                 .and()
                 .cors()
                 .and()

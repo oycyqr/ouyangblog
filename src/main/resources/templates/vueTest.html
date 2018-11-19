@@ -6,6 +6,10 @@
 </head>
 <body>
 <!--这是我们的View-->
+<div id="box">
+    <p>{{ msg }}</p>
+    <button v-on:click="get">增加 1</button>
+</div>
 <div id="app">
     <p>{{ message }}</p>
     <input type="text" v-model="message"/>
@@ -19,6 +23,7 @@
 </div>
 </body>
 <script src="js/vue.min.js"></script>
+<script src="js/vue-resource.min.js"></script>
 <script>
 
     // 这是我们的Model
@@ -41,5 +46,24 @@
             name: 'keepfool'
         }
     });
+
+    window.onload = function(){
+        var vm1 = new Vue({
+            el:'#box',
+            data:{
+                msg:'Hello World!http',
+            },
+            methods:{
+                get:function(){
+                    //发送get请求
+                    this.$http.get('http://127.0.0.1:8088/ouyangblog/api/user/list.do').then(function(res){
+                        console.log(res.body);
+                    },function(){
+                        console.log('请求失败处理');
+                    });
+                }
+            }
+        });
+    }
 </script>
 </html>

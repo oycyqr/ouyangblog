@@ -23,8 +23,8 @@ public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
        super.addInterceptors(registry);
        LoginInterceptor loginInterceptor = new LoginInterceptor();
        registry.addInterceptor(loginInterceptor)
-               .addPathPatterns("/**")
-               .excludePathPatterns("/user/login")
+               .addPathPatterns("/*.do")
+               .excludePathPatterns("/login")
                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
    }
 
