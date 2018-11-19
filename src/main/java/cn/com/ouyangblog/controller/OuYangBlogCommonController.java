@@ -24,8 +24,16 @@ public class OuYangBlogCommonController {
         return "login";
     }
 
+    @GetMapping("/about")
+    public String about() {
+        return "/about";
+    }
+    @GetMapping("/vueTest")
+    public String vueTest() {
+        return "/vueTest";
+    }
     @GetMapping("/pages/{page}")
-    public String page(@PathVariable String page) {
+    public String pages(@PathVariable String page) {
         return "/pages/" + page;
     }
 }

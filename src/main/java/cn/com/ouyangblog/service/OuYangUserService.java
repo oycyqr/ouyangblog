@@ -28,8 +28,10 @@ public class OuYangUserService implements UserDetailsService {
     @Autowired
     private OuYangUserRepository ouYangUserRepository;
 
+    /**
+     *  根据用户名获取用户 - 用户的角色、权限等信息
+     */
     @Override
-    /**  * 根据用户名获取用户 - 用户的角色、权限等信息   */
     public UserDetails loadUserByUsername(String account) throws UsernameNotFoundException {
         UserDetails userDetails = null;
         try {
