@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 /**
  * @author oyc
- * @Title: OuYangUserRepository
+ * @Title: OuYangUserRepositoryTest
  * @ProjectName ouyangblog
  * @Description: TODO
  * @date 2018/11/15 21:48

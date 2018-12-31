@@ -2,7 +2,6 @@ package cn.com.ouyangblog.web.rest;
 
 import cn.com.ouyangblog.domain.OuYangUser;
 import cn.com.ouyangblog.repository.OuYangUserRepository;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

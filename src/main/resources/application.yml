@@ -1,42 +1,60 @@
 #设定应用的名称,端口,错误处理路径
 server:
-  port: 8088
-  servlet:
-    context-path: /ouyangblog
-  error:
-    path: error
+    port: 8888
+    servlet:
+        context-path: /ouyangblog
+    error:
+        path: error
 
 ################################
 ##    thymeleaf模板
 ################################
 spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/ouyangblog?autoReconnect=true&autoReconnectForPools=true&useUnicode=true&characterEncoding=utf8 #开发环境
-    username: ouyangcheng
-    password: 123456
-    driver-class-name: com.mysql.jdbc.Driver
-    druid:
-      initialSize: 1
-      minIdle: 1
-      maxActive: 50
-      maxWait: 6000
-      timeBetweenEvictionRunsMillis: 6000
-      minEvictableIdleTimeMillis: 30000
-      testWhileIdle: true
-      testOnBorrow: true
-      testOnReturn: true
-      validationQuery: SELECT 1 from dual
-      connectionProperties: config.decrypt=false # database connection plain password
-  thymeleaf:
-    prefix:
-      classpath: /templates/
-      suffix: .html
-      cache: false
-      charset: UTF-8
-      mode: HTML5
-      servlet:
-        content-type: text/html
+    datasource:
+        url: jdbc:mysql://127.0.0.1:3306/ouyangblog?autoReconnect=true&autoReconnectForPools=true&useUnicode=true&characterEncoding=utf8 #开发环境
+        username: ouyangcheng
+        password: 123456
+        driver-class-name: com.mysql.jdbc.Driver
+        druid:
+            initialSize: 1
+            minIdle: 1
+            maxActive: 50
+            maxWait: 6000
+            timeBetweenEvictionRunsMillis: 6000
+            minEvictableIdleTimeMillis: 30000
+            testWhileIdle: true
+            testOnBorrow: true
+            testOnReturn: true
+            validationQuery: SELECT 1 from dual
+            connectionProperties: config.decrypt=false # database connection plain password
+    thymeleaf:
+        prefix:
+            classpath: /templates/
+            suffix: .html
+            cache: false
+            charset: UTF-8
+            mode: HTML5
+            servlet:
+                content-type: text/html
 
-  security:
-    basic:
-      enabled: false  # security 使能
+    security:
+        basic:
+            enabled: false  # security 使能
+
+    redis:
+        database: 0
+        url:
+        host: 192.168.14.97
+        password:
+        ssl: false
+        pool:
+            max-active:  8
+            max-idle:  8
+            max-wait: -1
+            min-idle: 0
+        port: 6379
+        timeout: 3600
+    data:
+        elasticsearch:
+            cluster-name: elasticsearch
+            cluster-nodes: 127.0.0.1:9300
