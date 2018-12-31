@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Description:
  */
 @Component
-public interface OuYangBlogArticleRepository extends ElasticsearchRepository<OuYangBlogArticle, String> {
+public interface OuYangBlogArticleRepository extends ElasticsearchRepository<OuYangBlogArticle, Integer> {
     /**
      * @param title
      * @param summary
