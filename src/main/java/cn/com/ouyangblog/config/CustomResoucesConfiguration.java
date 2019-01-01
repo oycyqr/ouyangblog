@@ -1,4 +1,4 @@
-package cn.com.ouyangblog.common;
+package cn.com.ouyangblog.config;
 
 import cn.com.ouyangblog.filter.LoginInterceptor;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,11 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 /**
- * 拦截器配置
+ * @author oyc
+ * @Title: OuYangCommonResource
+ * @ProjectName ouyangblog
+ * @Description: 拦截器配置
+ * @date 2018/11/17 12:24
  */
 @Configuration
 public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
@@ -20,13 +24,13 @@ public class CustomResoucesConfiguration extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-       super.addInterceptors(registry);
-       LoginInterceptor loginInterceptor = new LoginInterceptor();
-       registry.addInterceptor(loginInterceptor)
-               .addPathPatterns("/*.do")
-               .excludePathPatterns("/login")
-               .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
-   }
+        super.addInterceptors(registry);
+        LoginInterceptor loginInterceptor = new LoginInterceptor();
+        registry.addInterceptor(loginInterceptor)
+                .addPathPatterns("/*.do")
+                .excludePathPatterns("/login")
+                .excludePathPatterns("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**");
+    }
 
 
     @Override

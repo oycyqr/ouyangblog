@@ -1,16 +1,12 @@
-package cn.com.ouyangblog.common;
+package cn.com.ouyangblog.config;
 
-import cn.com.ouyangblog.common.MyPasswordEncoder;
 import cn.com.ouyangblog.service.OuYangUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 import javax.annotation.Resource;
 
@@ -25,34 +21,21 @@ import javax.annotation.Resource;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-   /* @Bean
-    public OuYangUserService ouYangUserService(){
-        return new OuYangUserService();
-    }*/
-
     @Resource
     public OuYangUserService ouYangUserService;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http
-                .authorizeRequests()
-                .antMatchers("/", "/home", "/about", "/vueTest","/common/**", "/**/*.js", "/**/*.css","/img/**", "/*/*.*.png").permitAll()//定义不需要验证的请求
-                //.antMatchers("/swagger-resources/**", "/webjars/**", "/v2/**", "/swagger-ui.html/**").permitAll()//定义不需要验证的请求
+        http.authorizeRequests()
+                //定义不需要验证的请求
+                .antMatchers("/api/index/**", "/index", "/home", "/about", "/vueTest", "/config/**", "/**/*.js", "/**/*.css", "/img/**", "/*/*.*.png").permitAll()
+                .antMatchers("/*").permitAll()
+                .antMatchers("/**/admin/**").hasRole("ADMIN")
                 .anyRequest().authenticated()//其余的需要验证
-                .and()
-                .formLogin()//定义login不需要验证
-                .loginPage("/login")
-                .permitAll()
-                //.loginProcessingUrl("/home")
-                .and()
-                .logout()//定义logout不需要验证
-                .permitAll().logoutSuccessUrl("/")
-                .and()
-                .cors()
-                .and()
-                .csrf()
-                .disable();
+                //定义login不需要验证
+                .and().formLogin().loginPage("/login").permitAll()
+                .and().logout()//定义logout不需要验证
+                .and().csrf().disable();
         super.configure(http);
     }
 

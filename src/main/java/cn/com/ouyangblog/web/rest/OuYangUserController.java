@@ -1,4 +1,4 @@
-package cn.com.ouyangblog.controller;
+package cn.com.ouyangblog.web.rest;
 
 import cn.com.ouyangblog.domain.OuYangUser;
 import cn.com.ouyangblog.repository.OuYangUserRepository;

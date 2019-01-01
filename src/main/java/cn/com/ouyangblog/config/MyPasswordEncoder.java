@@ -1,4 +1,4 @@
-package cn.com.ouyangblog.common;
+package cn.com.ouyangblog.config;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 

@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>vue Test</title>
+    <script th:href="@{/js/vue.min.js}"></script>
+    <script th:href="@{/js/vue-resource.min.js}"></script>
 </head>
 <body>
 <!--这是我们的View-->
@@ -22,8 +25,7 @@
     <h1 v-if="name.indexOf('jack') >= 0">Name: {{ name }}</h1>
 </div>
 </body>
-<script src="js/vue.min.js"></script>
-<script src="js/vue-resource.min.js"></script>
+
 <script>
 
     // 这是我们的Model
